@@ -1,0 +1,95 @@
+<div fxLayout="row" fxLayoutAlign="space-around center">
+    <div align="center" fxLayout="row" fxLayoutAlign="center center" class="register-form">
+
+        <form role="form" [formGroup]="formRegister" (ngSubmit)="onSubmit()" style="width: 100%;">
+
+            <mat-card class="mat-elevation-z8" flex="80" style="width: 600px; margin-top: 10px;">
+
+                <mat-card-title style="padding: 10px;">Sign up</mat-card-title>
+
+                <mat-card-content fxLayout="column" fxLayoutAlign="space-around stretch">
+
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="text" formControlName="firstname" autocomplete="firstname">
+                            <mat-label>First Name</mat-label>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="text" formControlName="lastname" autocomplete="lastname">
+                            <mat-label>Last Name</mat-label>
+                        </mat-form-field>
+                    </div>
+
+                    <mat-form-field>
+                        <input matInput type="text" formControlName="address" autocomplete="address">
+                        <mat-label>Address</mat-label>
+                    </mat-form-field>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                        <mat-form-field fxFlex="65">
+                            <input matInput type="text" formControlName="city" autocomplete="citt">
+                            <mat-label>City</mat-label>
+                        </mat-form-field>
+
+                        <mat-form-field fxFlex="25">
+                            <mat-select matNativeControl formControlName="state">
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let state of states" [value]="state">
+                                    {{state}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-label>State</mat-label>
+                        </mat-form-field>
+
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="text" formControlName="phone" autocomplete="Phone">
+                            <mat-label>Phone</mat-label>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="text" formControlName="mobilephone" autocomplete="mobilephone">
+                            <mat-label>Mobile Phone</mat-label>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+                        <mat-form-field fxFlex="100">
+                            <input matInput type="email" formControlName="email" class="form-control" value=""
+                                autocomplete="email">
+                            <mat-label>E-mail</mat-label>
+                        </mat-form-field>
+                    </div>
+
+                    <div fxLayout="row" fxLayoutAlign="space-between stretch">
+
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="password" formControlName="password" type="password"
+                                autocomplete="off">
+                            <mat-label>Password</mat-label>
+                        </mat-form-field>
+                        <mat-form-field fxFlex="45">
+                            <input matInput type="password" formControlName="password2" class="form-control"
+                                autocomplete="off">
+                            <mat-label>Password Confirmation</mat-label>
+                        </mat-form-field>
+
+                    </div>
+
+
+                    <div fxLayout="row" fxLayoutAlign="end end">
+                        <button mat-button color="primary" type="submit" [disabled]="!formRegister.valid">
+                            <mat-icon>done</mat-icon>&nbsp;Register
+                        </button>
+                    </div>
+
+
+
+                </mat-card-content>
+            </mat-card>
+        </form>
+
+
+    </div>
+</div>

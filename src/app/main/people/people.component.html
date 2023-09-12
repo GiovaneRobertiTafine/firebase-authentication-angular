@@ -1,0 +1,15 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <h3>People</h3>
+</div>
+<div>
+    <button mat-stroked-button color="primary" (click)="generate()">Generate</button>
+</div>
+<hr>
+<div *ngIf="people$ | async; let people">
+    <ul>
+        <li style="display: flex; align-items: center; gap: 10px" *ngFor="let p of people">
+            - {{p.name}} {{p.age}} - {{p.company}} - <a href="mailto:{{p.email}}">e-mail</a>
+            <mat-icon style="cursor: pointer;" (click)="del(p)">delete</mat-icon>
+        </li>
+    </ul>
+</div>
